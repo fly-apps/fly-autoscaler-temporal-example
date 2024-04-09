@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for fly-autoscaler-temporal-scaler on 2024-04-05T12:10:25-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'fly-autoscaler-temporal-scaler'
+primary_region = 'ord'
+
+[build]
+  image = 'flyio/fly-autoscaler:pr-25'
+
+[env]
+  FAS_APP_NAME = 'fly-autoscaler-temporal-worker'
+  FAS_CREATED_MACHINE_COUNT = 'queue_depth / 2'
+  FAS_REGIONS = 'iad,ord,sjc'
+  FAS_TEMPORAL_HOSTPORT = 'fly-autoscaler-temporal.internal:7233'
+  FAS_TEMPORAL_METRIC_NAME = 'queue_depth'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[[metrics]]
+  port = 9090
+  path = '/metrics'

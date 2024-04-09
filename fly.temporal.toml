@@ -1,0 +1,19 @@
+# fly.toml app configuration file generated for fly-autoscaler-temporal on 2024-04-05T12:08:24-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'fly-autoscaler-temporal'
+primary_region = 'ord'
+
+[experimental]
+  entrypoint = ['temporal', 'server', 'start-dev']
+  cmd = []
+
+[build]
+  image = 'temporaliotest/server:latest'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
