@@ -11,10 +11,11 @@ primary_region = 'ord'
 
 [env]
   FAS_APP_NAME = 'fly-autoscaler-temporal-worker'
-  FAS_CREATED_MACHINE_COUNT = 'queue_depth / 2'
+  FAS_CREATED_MACHINE_COUNT = 'running_workflow_count / 2'
   FAS_REGIONS = 'iad,ord,sjc'
-  FAS_TEMPORAL_HOSTPORT = 'fly-autoscaler-temporal.internal:7233'
-  FAS_TEMPORAL_METRIC_NAME = 'queue_depth'
+  FAS_TEMPORAL_ADDRESS = 'integration.lyeth.tmprl.cloud:7233'
+  FAS_TEMPORAL_NAMESPACE = 'integration.lyeth'
+  FAS_TEMPORAL_METRIC_NAME = 'running_workflow_count'
 
 [[vm]]
   memory = '1gb'

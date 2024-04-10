@@ -1,4 +1,15 @@
-app = "fly-autoscaler-temporal-worker"
+# fly.toml app configuration file generated for fly-autoscaler-temporal-worker on 2024-04-10T09:39:28-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'fly-autoscaler-temporal-worker'
+primary_region = 'ord'
 
 [build]
-dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
