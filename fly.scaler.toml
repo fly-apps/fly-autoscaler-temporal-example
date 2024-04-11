@@ -7,7 +7,7 @@ app = 'fly-autoscaler-temporal-scaler'
 primary_region = 'ord'
 
 [build]
-  image = 'flyio/fly-autoscaler:pr-25'
+  image = 'flyio/fly-autoscaler:0.2.2'
 
 [env]
   FAS_APP_NAME = 'fly-autoscaler-temporal-worker'
